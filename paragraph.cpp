@@ -6,6 +6,7 @@ Paragraph::Paragraph(){
 	//cout << "paragraph Default constructor" << endl;
 }
 
+// value constructor
 Paragraph::Paragraph(string p){
 	//cout << "paragraph value constructor" << endl;
 	if(p != ""){
@@ -17,7 +18,7 @@ Paragraph::Paragraph(string p){
 		lNode *prev = cur; // previous
 		while(ssin >> s){
 			char c = s[s.length()-1];
-			if( c != '.' && c != '!' && c != '?'){ // check for end of sentence
+			if( c != '.' && c != '!' && c != '?'){ // check for end of sentence punctuation
 				s2 = s2 + " " + s;
 			}else{
 				// found end of sentence, add new sentence to list

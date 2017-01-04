@@ -82,7 +82,7 @@ Word &Word::operator++(){
 		string consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
 		string vowels = "aeiouAEIOU"; // assume no y vowel at beginning of word
 		string output = "";
-		og = val;
+		og = val; // store original word
 		for (unsigned int i = 0; i < consonants.length(); ++i){
 			if(val[0] == consonants[i]){
 				if((val[0] == 't' || val[0] == 'T') && (val[1] == 'h' || val[1] == 'H')){ // if th
@@ -111,22 +111,8 @@ Word &Word::operator++(){
 Word &Word::operator--(){
 	//cout << "Word::operator-- prefix" << endl;
 	if(isPigLatin){
-		string original = "";
-		val.pop_back();
-		val.pop_back();
-		original = val;
-		if(original[original.length()-1] == 'w'){
-			if(original[original.length()-2] == 'w'){
-				original = "w" + original.substr(0,original.length()-1);
-			}else{
-				original = original[original.length()-1] + original.substr(0,original.length()-1);
-			}
-		}else{
-			original = original[original.length()-1] + original.substr(0,original.length()-1);
-		}
-		val = original;
-		val = og;
-	}
+		val = og; 
+	} 
 	isPigLatin = false;
 	return (*this);
 }

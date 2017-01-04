@@ -67,13 +67,13 @@ int main() {
     word = hello;
     std::cout << word << std::endl;
     Sentence s(bye + cs240);
-    s = (hello + cs240); // MEMORY LEAK
+    s = (hello + cs240); 
     std::cout << s << std::endl;
     Paragraph p("It was a rainy day. Everyone stayed inside.");
-    p = s + (cs240 + Word("rocks")); // MEMORY LEAK
+    p = s + (cs240 + Word("rocks")); 
     std::cout << p << std::endl;
     Story story("input.txt");
-    story = story + p; // MEMORY LEAK
+    story = story + p; 
     std::cout << story << std::endl;
   }
 
@@ -157,8 +157,8 @@ int main() {
     Paragraph intro((good + morning) + (hello + cs240));
     Paragraph outro((good + night) + (bye + cs240));
     intro++;
-    outro = outro + 1; // MEMORY LEAK
-    story = intro + story + outro; // MEMORY LEAK
+    outro = outro + 1;
+    story = intro + story + outro; 
     story.save("output.txt");
   }
 

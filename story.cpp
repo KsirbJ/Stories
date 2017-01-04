@@ -31,7 +31,7 @@ Story::Story(const Story &story1){
 	
 }
 
-// create a stroy from a file
+// create a story from a file
 Story::Story(string filename){
 	//cout << "called story from file constructor with " << filename << endl;
 	string line;
@@ -72,6 +72,7 @@ void Story::show(){
 	}
 }
 
+// Save to file
 bool Story::save(string filename){
 	//cout << "called story save with " << filename << endl;
 	ofstream of;
@@ -113,6 +114,7 @@ void Story::addToBack(const Paragraph &para1){
 
 }
 
+// Get first paragraph in story
 Paragraph Story::first(){
 	//cout << "Story::first" << endl;
 	Paragraph tmp;
@@ -121,6 +123,7 @@ Paragraph Story::first(){
 	return tmp;
 }
 
+// get story minus first paragraph
 Story Story::rest(){
 	//cout << "Story::rest" << endl;
 	Story tmp;
